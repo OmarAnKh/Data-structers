@@ -13,7 +13,6 @@ int main()
     V1.insert("a");
     V1.insert("l");
     V1.insert("p");
-    V1.insert("omar and abood");
     myVector<string> V2(V1);
     cout << V1.sort();
 }
