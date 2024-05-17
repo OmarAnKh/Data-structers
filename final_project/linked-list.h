@@ -182,64 +182,62 @@ public:
         tempNode = tempNext;
         n--;
     }
-    bool isExist(const nodeType element)
+    bool isExist(string element)
     {
         if (!empty())
         {
             SNode<nodeType> *tempNode = head;
-            while (tempNode->data != element && tempNode->next)
+            while (tempNode->data.getName() != element && tempNode->next)
             {
                 tempNode = tempNode->next;
             }
-            if (tempNode->data == element)
+            if (tempNode->data.getName() == element)
             {
                 return true;
             }
         }
         return false;
     }
-    SNode<nodeType> *find(const nodeType element)
+    SNode<nodeType> *find(string element)
     {
         if (!empty())
         {
             SNode<nodeType> *temoNode = head;
-            while (temoNode->data != element && temoNode->next)
+            while (temoNode->data.getName() != element && temoNode->next)
             {
                 temoNode = temoNode->next;
             }
-            if (temoNode->data == element)
+            if (temoNode->data.getName() == element)
             {
                 return temoNode;
             }
         }
         return NULL;
     }
-    bool remove(const nodeType item)
+    bool remove(string item)
     {
         if (!empty())
         {
-
             SNode<nodeType> *tempNode = head;
-
-            if (head->next)
+            if (tempNode->data.getName() == item)
             {
-                while (tempNode->next->data != item && tempNode->next)
+                head = head->next;
+                delete tempNode;
+                return true;
+            }
+            else
+            {
+                while (tempNode->next->data.getName() != item && tempNode->next)
                 {
                     tempNode = tempNode->next;
                 }
-                if (tempNode->next->data == item)
+                if (tempNode->next->data.getName() == item)
                 {
                     SNode<nodeType> *node = tempNode->next;
                     tempNode->next = node->next;
                     delete node;
-                    n--;
                     return true;
                 }
-            }
-            else
-            {
-                head = NULL;
-                n--;
             }
         }
         return false;
@@ -336,5 +334,19 @@ public:
             temp = temp->next;
         }
         return (sum / n);
+    }
+    SinglyList &MakeREV(const SinglyList &obj)
+    {
+        while (!empty())
+        {
+            removeFront();
+        }
+        SNode<nodeType> *temp = obj.head;
+        while (temp)
+        {
+            this->addFront(temp->data);
+            temp = temp->next;
+        }
+        return *this;
     }
 };

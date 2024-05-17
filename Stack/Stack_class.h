@@ -12,15 +12,21 @@ private:
 public:
 public:
     ArrayStack(int c = 5);
+    ArrayStack(const ArrayStack<stackType> &obj);
     ~ArrayStack();
-    void push(const stackType&item);
+    void push(const stackType &item);
     void pop();
+    stackType top();
+    bool empty();
+    bool full();
+    int size();
+    ArrayStack<stackType> &operator=(const ArrayStack<stackType> &obj);
+    void cat(const ArrayStack<stackType> &obj)
+    {
+    }
+
 };
-// push
-// pop
-// top
-// empty
-// size
-// constructors
-// =
-// destructor
+
+// cat
+// cin
+// cout

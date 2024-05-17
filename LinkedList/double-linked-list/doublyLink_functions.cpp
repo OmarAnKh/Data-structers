@@ -223,6 +223,7 @@ void Doublylist<nodeType>::insertAfter(const nodeType &element, const nodeType &
         n++;
     }
 }
+
 template <typename nodeType>
 void Doublylist<nodeType>::insertBefor(const nodeType &element, const nodeType &item)
 {

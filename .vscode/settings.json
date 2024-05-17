@@ -43,7 +43,12 @@
         "cwchar": "cpp",
         "new": "cpp",
         "xstddef": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "*.inc": "cpp",
+        "deque": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stack": "cpp"
     },
     "liveServer.settings.port": 5501
 }
