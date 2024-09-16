@@ -48,7 +48,18 @@
         "deque": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "fstream": "cpp",
+        "optional": "cpp",
+        "queue": "cpp",
+        "sstream": "cpp",
+        "set": "cpp",
+        "map": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "liveServer.settings.port": 5501
 }
